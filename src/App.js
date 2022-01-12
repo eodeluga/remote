@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import RemoteButton from "./RemoteButton";
+import "./App.css";
 
 function App() {
+  let buttons = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "HOME",
+    "0",
+    "@",
+    "OPTS",
+    "UP",
+    "DOWN",
+    "LEFT",
+    "RIGHT",
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {buttons.map((result, index) => {
+        return (
+          <RemoteButton
+            // These are props
+            number={result}
+          />
+        );
+      })}
     </div>
   );
 }
